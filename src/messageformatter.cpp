@@ -36,9 +36,9 @@ MessageFormatter::MessageFormatter() :
     loadEmojis();
 }
 
-void MessageFormatter::replaceUserInfo(QString &message)
+void MessageFormatter::replaceUserInfo(QString &message, const QVariantList &usersInfo)
 {
-    foreach (const QVariant &value, Storage::users()) {
+    for (const QVariant &value : usersInfo) {
         QVariantMap user = value.toMap();
         QString id = user.value("id").toString();
         QString name = user.value("name").toString();
@@ -50,9 +50,9 @@ void MessageFormatter::replaceUserInfo(QString &message)
     }
 }
 
-void MessageFormatter::replaceChannelInfo(QString &message)
+void MessageFormatter::replaceChannelInfo(QString &message, const QVariantList &channelsInfo)
 {
-    foreach (const QVariant &value, Storage::channels()) {
+    for (const QVariant &value : channelsInfo) {
         QVariantMap channel = value.toMap();
         QString id = channel.value("id").toString();
         QString name = channel.value("name").toString();

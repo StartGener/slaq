@@ -9,9 +9,9 @@ class MessageFormatter
 public:
     MessageFormatter();
 
-    void replaceUserInfo(QString &message);
+    void replaceUserInfo(QString &message, const QVariantList &usersInfo);
     void replaceTargetInfo(QString &message);
-    void replaceChannelInfo(QString &message);
+    void replaceChannelInfo(QString &message, const QVariantList &channelsInfo);
     void replaceSpecialCharacters(QString &message);
     void replaceLinks(QString &message);
     void replaceMarkdown(QString &message);

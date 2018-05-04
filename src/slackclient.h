@@ -11,6 +11,7 @@
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 
+#include "storage.h"
 #include "slackconfig.h"
 #include "slackstream.h"
 #include "messageformatter.h"
@@ -187,6 +188,7 @@ private:
 
     QString m_lastChannel;
     MessageFormatter m_formatter;
+    Storage m_storage;
 };
 
 #endif // SLACKCLIENT_H

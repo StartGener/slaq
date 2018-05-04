@@ -79,6 +79,7 @@ Column {
             }
 
             Keys.onTabPressed: {
+                console.log("pressed tab")
                 if (nickPopupVisible) {
                     currentNickSuggestionIndex =  (currentNickSuggestionIndex + 1) % nickSuggestions.length
                 } else {
@@ -135,7 +136,6 @@ Column {
             return
         }
 
-        messageInput.focus = false
         Qt.inputMethod.hide()
         sendMessage(input)
     }
